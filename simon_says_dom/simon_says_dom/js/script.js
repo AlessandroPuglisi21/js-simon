@@ -12,7 +12,7 @@
 // - Individuate gli elementi di cui avete bisogno per realizzare il programma.
 // - Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
 
-let timeLeft = 30;
+let timeLeft = 5;
 
 //!CREAZIONE COUNTDOWN
 function countDown() {
@@ -51,3 +51,15 @@ function randomNumber() {
 }
 //Stampo
 randomNumber();
+
+//! COMPARSA NUMERI RICORDATI 
+setTimeout(function (){
+    const element = document.getElementById("answers-form");
+    element.classList.remove('d-none')
+}, 6000)
+
+//! SCOMPARSA NUMERI RANDOM 
+setTimeout(function(){
+    const element = document.getElementById("numbers-list");
+    element.classList.add('d-none')
+}, 6000)
