@@ -11,3 +11,43 @@
 // - Dividete in piccoli problemi la consegna.
 // - Individuate gli elementi di cui avete bisogno per realizzare il programma.
 // - Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
+
+let timeLeft = 30;
+
+//!CREAZIONE COUNTDOWN
+function countDown() {
+  const timer = setInterval(() => {
+    document.getElementById("countdown").textContent = timeLeft;
+
+    // Correggere la condizione per fermare il timer
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").textContent = "Tempo Scaduto!";
+    }
+
+    timeLeft--;
+  }, 1000);
+}
+
+// Iniziare il countdown
+countDown();
+
+//!GENERAZIONE CASUALE DI NUMERI
+
+const listNumbers = document.getElementById("numbers-list");
+
+function randomNumber() {
+  //inizializzo un ciclo per generare 5 numeri random
+  for (let i = 0; i < 5; i++) {
+    let number = Math.floor(Math.random() * 50) + 1;
+
+    //creo gli elementi li che andranno nella lista ul dell'HTML 
+    const listElement = document.createElement("li");
+    listElement.textContent = number;
+
+    //li aggiungo alla lista
+    listNumbers.appendChild(listElement);
+  }
+}
+//Stampo
+randomNumber();
